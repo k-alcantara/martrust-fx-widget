@@ -1,0 +1,39 @@
+<div class="fx-widget">
+    <div class="fx-widget-title">
+        Forex Calculator
+    </div>
+    <div class="fx-widget-form">
+        <form [formGroup]="fxForm">
+            <div class="buy-sell">
+                
+            </div>
+            <div class="from-group">
+                <mat-form-field class="from-currency">
+                    <mat-select formControlName="fromCurrency">
+                        <mat-option *ngFor="let currency of currencies" [value]="currency">
+                          {{currency}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="from-amount">
+                    <input matInput formControlName="fromAmount" required>
+                </mat-form-field>
+            </div>
+            <div class="to-group">
+                <mat-form-field class="to-currency">
+                    <mat-select formControlName="toCurrency">
+                        <mat-option *ngFor="let currency of currencies" [value]="currency">
+                          {{currency}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="to-amount">
+                    <input matInput formControlName="toAmount" required>
+                </mat-form-field>
+            </div>
+        </form>
+    </div>
+    <div class="fx-widget-exchange-rate" *ngIf="fromCurrency && toCurrency">
+        <span>1 {{fromCurrency}} = {{exchangeRate}} {{toCurrency}}</span>
+    </div>
+</div>

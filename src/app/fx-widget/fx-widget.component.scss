@@ -1,0 +1,46 @@
+.fx-widget {
+    padding: 10px;
+    background-color: #74bae8;
+    display: flex;
+    flex-direction: column;
+
+    &-title {
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 500;
+        padding-bottom: 10px;
+    }
+
+    .buy-sell {
+        color: #ffffff;
+        padding-bottom: 10px;
+
+        mat-radio-button {
+            padding-right: 10px;
+        }
+    }
+
+    &-form {
+
+        .from-group, .to-group {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 10px;
+        }
+
+        .from-currency, .to-currency {
+            width: 100px;
+        }
+
+        mat-form-field {
+            background: #ffffff;
+        }
+    }
+
+    &-exchange-rate {
+        color: #ffffff;
+        font-size: 10px;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
