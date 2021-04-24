@@ -23,7 +23,7 @@ export class FxWidgetComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private fxService: FxService
+    public fxService: FxService
   ) { }
 
   ngOnInit(): void {
@@ -47,8 +47,6 @@ export class FxWidgetComponent implements OnInit {
       this.fromCurrency = formValues.fromCurrency;
       this.toCurrency = formValues.toCurrency;
     });
-
-
 
     this.fxForm.get('fromCurrency').valueChanges.subscribe(val => {
       if (val !== '' && this.toCurrency !== '') {
